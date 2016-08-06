@@ -1,4 +1,6 @@
 apply plugin: 'com.android.application'
+//Butter Knife
+apply plugin: 'android-apt'
 
 android {
     compileSdkVersion 23
@@ -23,11 +25,13 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             buildConfigField "String","URL","\"https://api.nasa.gov\""
+            buildConfigField "String", "API_KEY", "\"igfnGhta3Lxhd5imEDht3CWV28QPs7tJPRcnVQRa\""
             signingConfig signingConfigs.release
         }
         debug {
             minifyEnabled true
             buildConfigField "String","URL","\"https://api.nasa.gov\""
+            buildConfigField "String", "API_KEY", "\"igfnGhta3Lxhd5imEDht3CWV28QPs7tJPRcnVQRa\""
         }
     }
 
@@ -37,8 +41,14 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.4.0'
+    //para lo de retrofiit
     compile 'com.squareup.retrofit2:converter-gson:2.0.2'
     compile 'com.squareup.retrofit2:retrofit:2.1.0'
     compile 'com.squareup.okhttp3:logging-interceptor:3.3.1'
     compile 'com.squareup.picasso:picasso:2.5.2'
+    //Butter Knife
+    compile 'com.jakewharton:butterknife:8.2.1'
+    apt 'com.jakewharton:butterknife-compiler:8.2.1'
+    //recliclerview
+    compile 'com.android.support:recyclerview-v7:23.1.1'
 }
