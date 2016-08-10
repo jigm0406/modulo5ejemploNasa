@@ -1,5 +1,6 @@
 package com.unam.jigm.nasa2;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
@@ -42,11 +43,24 @@ public class Mars_list extends AppCompatActivity  {
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this,2);
         recyclerView.setLayoutManager(gridLayoutManager);
 
+        final NasaApodAdapter nasaApodAdapter=new NasaApodAdapter();
+
+        nasaApodAdapter.setOnItemClickListener(new NasaApodAdapter.OnItemClickListener(){
+            @Override
+            public void onItemClick(Photo photo) {
+                Intent intent= new Intent(Mars_list.this,MainSecundario.class);
+                intent.putExtra("paramphoto", photo);
+                startActivity(intent);
+             }
+        });
+
         ApodService apodService = Data.getRetrofitInstance().create(ApodService.class);
         apodService.getMarRover(400, BuildConfig.API_KEY).enqueue(new Callback<ModelMarRoverPhotos>() {
             @Override
             public void onResponse(Call<ModelMarRoverPhotos> call, Response<ModelMarRoverPhotos> response) {
-                recyclerView.setAdapter(new NasaApodAdapter(response.body().getPhotos()));
+                //recyclerView.setAdapter(new NasaApodAdapter(response.body().getPhotos()));
+                nasaApodAdapter.setMarsPhotos(response.body().getPhotos());
+                recyclerView.setAdapter(nasaApodAdapter);
             }
 
             @Override

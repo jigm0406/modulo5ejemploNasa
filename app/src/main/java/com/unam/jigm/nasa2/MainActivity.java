@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.txt_explanation) TextView explanation;
     @BindView(R.id.id_btn) TextView btn;
 
-    //@Override
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
