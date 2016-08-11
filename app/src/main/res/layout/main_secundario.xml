@@ -10,41 +10,41 @@
     <com.facebook.drawee.view.SimpleDraweeView
         android:id="@+id/item_imagephoto"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="@dimen/image_height"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="@dimen/margin_top"
         />
     <TextView
         android:id="@+id/item_cameranamefull"
         android:textStyle="bold"
-        android:textSize="20dp"
+        android:textSize="@dimen/text_size"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="@dimen/margin_top"
         />
     <TextView
         android:id="@+id/item_apod_landdate"
-        android:textSize="10dp"
+        android:textSize="@dimen/text_sizeb"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="@dimen/margin_topb"
         />
     <TextView
         android:id="@+id/item_apod_cameraname"
-        android:textSize="10dp"
+        android:textSize="@dimen/text_sizeb"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:layout_marginTop="1dp"
+        android:layout_marginTop="@dimen/margin_topb"
         />
     <TextView
         android:id="@+id/item_apod_rovername"
-        android:textSize="10dp"
+        android:textSize="@dimen/text_sizeb"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="@dimen/margin_topb"
         />
 </LinearLayout>
