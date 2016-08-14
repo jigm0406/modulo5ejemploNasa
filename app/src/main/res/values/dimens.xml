@@ -7,4 +7,5 @@
     <dimen name="margin_topb">10dp</dimen>
     <dimen name="text_size">20dp</dimen>
     <dimen name="text_sizeb">15dp</dimen>
+    <dimen name="sizetoolbarelevation">16dp</dimen>
 </resources>

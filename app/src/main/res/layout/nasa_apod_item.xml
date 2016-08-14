@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <!--para el fresco-->
+    <include layout="@layout/toolbar"/>
 <com.facebook.drawee.view.SimpleDraweeView
     android:id="@+id/item_apod_image"
     android:layout_width="match_parent"

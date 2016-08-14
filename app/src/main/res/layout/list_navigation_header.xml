@@ -1,24 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-     xmlns:fresco="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_material_dark">
-    <include layout="@layout/toolbar"/>
-    <!--para el fresco-->
+    android:background="@color/colorPrimaryDark">
     <com.facebook.drawee.view.SimpleDraweeView
         android:id="@+id/item_imagephoto"
         android:layout_width="match_parent"
         android:layout_height="@dimen/image_height"
+        android:src="@drawable/ic_file_cloud_done"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="@dimen/margin_top"
         />
-
     <TextView
         android:id="@+id/item_cameranamefull"
+        android:text="Aplicaction Space"
         android:textStyle="bold"
         android:textSize="@dimen/text_size"
         android:layout_width="match_parent"
@@ -26,17 +21,5 @@
         android:gravity="center"
         android:textColor="@color/colorletter"
         android:layout_marginTop="@dimen/margin_top"
-        />
-    <TextView
-        android:id="@+id/item_apod_landdate"
-        style="@style/NasaDetalleText"
-        />
-    <TextView
-        android:id="@+id/item_apod_cameraname"
-        style="@style/NasaDetalleText"
-        />
-    <TextView
-        android:id="@+id/item_apod_rovername"
-        style="@style/NasaDetalleText"
         />
 </LinearLayout>

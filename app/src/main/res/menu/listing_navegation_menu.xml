@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<group android:checkableBehavior="single">
+    <item
+        android:id="@+id/mars_rover_item"
+        android:checkable="false"
+        android:icon="@drawable/ic_file_cloud_done"
+        android:title="Mars Rovers Images">
+    </item>
+    <item
+        android:id="@+id/mars_apod_item"
+        android:checkable="false"
+        android:icon="@drawable/ic_file_cloud_done"
+        android:title="Today APOD">
+    </item>
+    <item
+        android:id="@+id/favorite_item"
+        android:checkable="false"
+        android:icon="@drawable/ic_file_cloud_done"
+        android:title="Favorites">
+    </item>
+</group>
+</menu>
