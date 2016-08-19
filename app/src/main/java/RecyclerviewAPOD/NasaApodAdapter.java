@@ -34,7 +34,7 @@ public class NasaApodAdapter extends RecyclerView.Adapter<NasaApodViewHolder>{
 
     @Override
     public void onBindViewHolder(NasaApodViewHolder holder, int position) {
-        Photo photo = marsPhotos.get(position);
+       Photo photo = marsPhotos.get(position);
        holder.itemApodText.setText(photo.getCamera().getFullName());
         //Picasso.with(holder.itemApodImage.getContext())
          //       .load(photo.getImgSrc())

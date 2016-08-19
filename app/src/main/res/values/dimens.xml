@@ -8,4 +8,10 @@
     <dimen name="text_size">20dp</dimen>
     <dimen name="text_sizeb">15dp</dimen>
     <dimen name="sizetoolbarelevation">16dp</dimen>
+    <dimen name="textsizefirst">18dp</dimen>
+    <dimen name="textsizesecond">15dp</dimen>
+    <dimen name="imgsizesecond">56dp</dimen>
+    <dimen name="imgsizesecondH">65dp</dimen>
+    <dimen name="margin_lo">16dp</dimen>
+    <dimen name="Lywidth">386dp</dimen>
 </resources>

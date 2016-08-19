@@ -23,4 +23,12 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">@color/colorletter</item>
     </style>
+    <style name="FavoritesText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">top</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textColor">#EFFBF5</item>
+    </style>
+
 </resources>

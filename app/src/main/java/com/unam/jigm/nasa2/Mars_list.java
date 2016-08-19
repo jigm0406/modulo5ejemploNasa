@@ -1,5 +1,6 @@
 package com.unam.jigm.nasa2;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
@@ -22,14 +23,18 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import RecyclerviewAPOD.NasaApodAdapter;
+import adapters.AdapterItemList;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import data.ApodService;
 import data.Data;
+import fragments.fragment_favorites;
 import fragments.fragment_listing;
 import fragments.fragment_today;
 import model.APOD;
@@ -38,6 +43,7 @@ import model.Photo;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import sql.ItemDataSource;
 
 import com.facebook.AccessToken;
 import com.facebook.GraphRequest;
@@ -50,6 +56,7 @@ import org.json.JSONObject;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.List;
 
 
 /**
@@ -60,7 +67,7 @@ public class Mars_list extends AppCompatActivity  {
     //@BindView(R.id.mars_rover_listing) RecyclerView recyclerView;
     @BindView(R.id.list_navigation_view) NavigationView navigationview;
     @BindView(R.id.listing_navigation_drawer) DrawerLayout drawerLayout;
-
+    ItemDataSource itemDataSource;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -95,6 +102,7 @@ public class Mars_list extends AppCompatActivity  {
                         return true;
                     case R.id.favorite_item:
                         Snackbar.make(findViewById(android.R.id.content), "Favorite", Snackbar.LENGTH_SHORT).show();
+                        getFragmentManager().beginTransaction().replace(R.id.activity_detalles_fldetalles,new fragment_favorites()).commit();
                         return true;
                     default:
                         return false;
@@ -117,6 +125,8 @@ public class Mars_list extends AppCompatActivity  {
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
     }
+
+
 
     private void getFBUserInfo() {
         GraphRequest request = GraphRequest.newMeRequest(AccessToken.getCurrentAccessToken(), new GraphRequest.GraphJSONObjectCallback()
