@@ -11,14 +11,12 @@ import java.util.List;
 import model.ModelItemFavorites;
 
 /**
- * Created by Mario on 13/08/2016.
+ * Created by Mario on 19/08/2016.
  */
-public class ItemDataSource
-{
-
+public class ItemDataSourceFavorites {
     private final SQLiteDatabase db;
 
-    public ItemDataSource(Context context)
+    public ItemDataSourceFavorites(Context context)
     {
         MySqliteHelper helper = new MySqliteHelper(context);
         db=helper.getWritableDatabase();
@@ -33,24 +31,9 @@ public class ItemDataSource
         contentValuesAPP.put(MySqliteHelper.COLUMN_ITEM_ROVNAME,modelItemFavorites.rovname);
         db.insert(MySqliteHelper.TABLE_NAME,null,contentValuesAPP);
     }
-    public void updateItemFavorites(ModelItemFavorites modelItemFavorites)
-    {
-        ContentValues contentValuesAPP = new ContentValues();
-        contentValuesAPP.put(MySqliteHelper.COLUMN_ITEM_IMGPHOTO,modelItemFavorites.imgphoto);
-        contentValuesAPP.put(MySqliteHelper.COLUMN_ITEM_CAMFULL,modelItemFavorites.camfull);
-        contentValuesAPP.put(MySqliteHelper.COLUMN_ITEM_LANDDATE,modelItemFavorites.landdate);
-        contentValuesAPP.put(MySqliteHelper.COLUMN_ITEM_CAMNAME,modelItemFavorites.camname);
-        contentValuesAPP.put(MySqliteHelper.COLUMN_ITEM_ROVNAME,modelItemFavorites.rovname);
-        db.update(MySqliteHelper.TABLE_NAME,contentValuesAPP, MySqliteHelper.COLUMN_ID+"='"+modelItemFavorites.id+"'",null);
-    }
-    public void deleteItem(ModelItemFavorites modelItemFavorites)
-    {
-        db.delete(MySqliteHelper.TABLE_NAME, MySqliteHelper.COLUMN_ID+"=?",
-                new String[]{String.valueOf(modelItemFavorites.id)});
-    }
     public List<ModelItemFavorites> getAllItems()
     {
-        List<ModelItemFavorites>modelItemList = new ArrayList<>();
+        List<ModelItemFavorites> modelItemList = new ArrayList<>();
         Cursor cursor = db.query(MySqliteHelper.TABLE_NAME,null,null,null,null,null,null);
         while (cursor.moveToNext())
         {
@@ -60,18 +43,13 @@ public class ItemDataSource
             String  landdate=cursor.getString(cursor.getColumnIndexOrThrow(MySqliteHelper.COLUMN_ITEM_LANDDATE));
             String camname=cursor.getString(cursor.getColumnIndexOrThrow(MySqliteHelper.COLUMN_ITEM_CAMNAME));
             String rovname=cursor.getString(cursor.getColumnIndexOrThrow(MySqliteHelper.COLUMN_ITEM_ROVNAME));
-            /*Log.d("camfull",camfull);
-            Log.d("camfull",camname);
-            Log.d("landate",landdate);
-            Log.d("imgphoto",imgphoto);
-            Log.d("rovname",rovname);*/
             ModelItemFavorites modelitem = new ModelItemFavorites(imgphoto,camfull, landdate,camname,rovname);
-            modelitem.id=id_table;
+            /*modelitem.id=id_table;
             modelitem.imgphoto=imgphoto;
             modelitem.camfull=camfull;
             modelitem.landdate=landdate;
             modelitem.camname=camname;
-            modelitem.rovname=rovname;
+            modelitem.rovname=rovname;*/
             modelItemList.add(modelitem);
         }
         return modelItemList;

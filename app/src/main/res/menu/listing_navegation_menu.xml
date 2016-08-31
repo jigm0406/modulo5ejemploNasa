@@ -4,19 +4,19 @@
     <item
         android:id="@+id/mars_rover_item"
         android:checkable="false"
-        android:icon="@drawable/ic_file_cloud_done"
+        android:icon="@drawable/ic_image_wb_sunny"
         android:title="Mars Rovers Images">
     </item>
     <item
         android:id="@+id/mars_apod_item"
         android:checkable="false"
-        android:icon="@drawable/ic_file_cloud_done"
+        android:icon="@drawable/ic_image_wb_sunny"
         android:title="Today APOD">
     </item>
     <item
         android:id="@+id/favorite_item"
         android:checkable="false"
-        android:icon="@drawable/ic_file_cloud_done"
+        android:icon="@drawable/ic_image_wb_sunny"
         android:title="Favorites">
     </item>
 </group>

@@ -11,4 +11,11 @@ public class ModelItemFavorites
     public  String landdate;
     public String camname;
     public  String rovname;
+    public ModelItemFavorites(String imgphoto,String camfull, String landdate,String camname,String rovname){
+        this.imgphoto = imgphoto;
+        this.camfull = camfull;
+        this.landdate = landdate;
+        this.camname = camname;
+        this.rovname = rovname;
+    }
 }

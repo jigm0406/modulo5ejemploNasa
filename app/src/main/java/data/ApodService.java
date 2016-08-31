@@ -19,6 +19,5 @@ public interface ApodService {
     Call<APOD> getTodayApodWithQuery(@Query("api_key") String apikey);
 
     @GET("mars-photos/api/v1/rovers/curiosity/photos")
-    Call<ModelMarRoverPhotos> getMarRover(@Query("sol") Integer SOL, @Query("api_key") String apikey);
-
+    Call<ModelMarRoverPhotos> getMarRover(@Query("sol") Integer SOL,@Query("api_key") String apikey);
 }

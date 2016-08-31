@@ -72,7 +72,10 @@ public class fragment_listing extends Fragment {
         });
 
         ApodService apodService = Data.getRetrofitInstance().create(ApodService.class);
-        apodService.getMarRover(400, BuildConfig.API_KEY).enqueue(new Callback<ModelMarRoverPhotos>() {
+        //**agregar
+        int isol = (int)(Math.random()*1000);
+        int ipage = 1;//(int)(Math.random()*2);
+        apodService.getMarRover(isol, BuildConfig.API_KEY).enqueue(new Callback<ModelMarRoverPhotos>() {
             @Override
             public void onResponse(Call<ModelMarRoverPhotos> call, Response<ModelMarRoverPhotos> response) {
                 //recyclerView.setAdapter(new NasaApodAdapter(response.body().getPhotos()));
@@ -92,7 +95,7 @@ public class fragment_listing extends Fragment {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
             case R.id.share_rover_mars:
-                shareText("Diplomado UNAM, mars rover:  " + imageURL);
+                shareText("Mars Rover:  " + imageURL);
                //Log.d("hola","como mars rover");
                 return true;
             default:

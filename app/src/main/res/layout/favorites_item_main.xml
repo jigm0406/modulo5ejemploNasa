@@ -4,41 +4,37 @@
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:minHeight="56dp"
-    android:background="@color/background_material_dark">
+    android:background="@color/background_material_dark"
+    >
     <LinearLayout
         android:layout_weight="0.6"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="top">
-    <!--para el fresco-->
-    <ImageView
+        <!--para el fresco-->
+    <com.facebook.drawee.view.SimpleDraweeView
         android:id="@+id/item_favorites_imgphoto"
-        android:layout_margin="@dimen/sizetoolbarelevation"
-        android:layout_width="@dimen/imgsizesecond"
-        android:layout_height="@dimen/imgsizesecondH"  />
+        android:layout_width="119dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"/>
     </LinearLayout>
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="@dimen/Lywidth"
         android:layout_height="match_parent"
         android:layout_weight="0.4">
-    <TextView
-        android:id="@+id/item_favorites_camfull"
-        style="@style/FavoritesText"
-        />
-     <TextView
-         android:id="@+id/item_favorites_landdate"
-         style="@style/FavoritesText"
-     />
-     <TextView
-          android:id="@+id/item_favorites_camname"
-         style="@style/FavoritesText"
-     />
-    <TextView
-          android:id="@+id/item_favorites_rovname"
-        style="@style/FavoritesText"
-     />
+        <TextView
+            android:id="@+id/item_favorites_camfull"
+            style="@style/FavoritesText"/>
+        <TextView
+            android:id="@+id/item_favorites_landdate"
+            style="@style/FavoritesText"/>
+        <TextView
+            android:id="@+id/item_favorites_camname"
+            style="@style/FavoritesText"/>
+        <TextView
+            android:id="@+id/item_favorites_rovname"
+            style="@style/FavoritesText"/>
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"

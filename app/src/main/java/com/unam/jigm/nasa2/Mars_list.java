@@ -1,62 +1,31 @@
 package com.unam.jigm.nasa2;
 
-import android.content.Context;
-import android.content.Intent;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
-import android.content.pm.Signature;
-import android.net.Uri;
-import android.support.design.internal.NavigationMenuView;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Base64;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import RecyclerviewAPOD.NasaApodAdapter;
-import adapters.AdapterItemList;
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
-import data.ApodService;
-import data.Data;
-import fragments.fragment_favorites;
+import fragments.fragmentRFavorites;
 import fragments.fragment_listing;
 import fragments.fragment_today;
-import model.APOD;
-import model.ModelMarRoverPhotos;
-import model.Photo;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 import sql.ItemDataSource;
 
 import com.facebook.AccessToken;
 import com.facebook.GraphRequest;
 import com.facebook.GraphResponse;
 import com.facebook.drawee.view.SimpleDraweeView;
-import com.squareup.picasso.Picasso;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-import java.util.List;
 
 
 /**
@@ -102,7 +71,7 @@ public class Mars_list extends AppCompatActivity  {
                         return true;
                     case R.id.favorite_item:
                         Snackbar.make(findViewById(android.R.id.content), "Favorite", Snackbar.LENGTH_SHORT).show();
-                        getFragmentManager().beginTransaction().replace(R.id.activity_detalles_fldetalles,new fragment_favorites()).commit();
+                        getFragmentManager().beginTransaction().replace(R.id.activity_detalles_fldetalles,new fragmentRFavorites()).commit();
                         return true;
                     default:
                         return false;
@@ -138,6 +107,7 @@ public class Mars_list extends AppCompatActivity  {
                 {
                     SimpleDraweeView userImage = (SimpleDraweeView) findViewById(R.id.item_imagephoto);
                     userImage.setImageURI("http://graph.facebook.com/"+ object.getString("id") +"/picture?type=large");
+                    Log.d("facebook id : ", object.getString("id"));
                     TextView userName= (TextView) findViewById(R.id.item_cameranamefull);
                     userName.setText(object.getString("name"));
                 }

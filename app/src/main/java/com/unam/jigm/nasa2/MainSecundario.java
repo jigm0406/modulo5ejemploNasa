@@ -14,6 +14,7 @@ import butterknife.ButterKnife;
 import model.ModelItemFavorites;
 import model.Photo;
 import sql.ItemDataSource;
+
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -58,7 +59,7 @@ public class MainSecundario extends AppCompatActivity {
                 String scamname=CName.getText().toString();
                 String srovname=RName.getText().toString();
                 Log.d("secundario","prueba agregar favoritos");
-                ModelItemFavorites itemFavorites = new ModelItemFavorites();
+                ModelItemFavorites itemFavorites = new ModelItemFavorites( imgStr, sfullnamee,  slandname, scamname, srovname);;
                 itemFavorites.imgphoto=imgStr;
                 itemFavorites.camfull=sfullnamee;
                 itemFavorites.landdate=slandname;
