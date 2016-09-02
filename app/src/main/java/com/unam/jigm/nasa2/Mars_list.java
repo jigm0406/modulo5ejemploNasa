@@ -15,6 +15,7 @@ import android.widget.TextView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import fragments.fragmentRFavorites;
+import fragments.fragment_acecade;
 import fragments.fragment_listing;
 import fragments.fragment_today;
 import sql.ItemDataSource;
@@ -62,16 +63,21 @@ public class Mars_list extends AppCompatActivity  {
                 drawerLayout.closeDrawers();
                 switch (item.getItemId()) {
                     case R.id.mars_apod_item:
-                        Snackbar.make(findViewById(android.R.id.content), "Today Apod", Snackbar.LENGTH_SHORT).show();
+                        Snackbar.make(findViewById(android.R.id.content), "Foto del Día.", Snackbar.LENGTH_SHORT).show();
                         getFragmentManager().beginTransaction().replace(R.id.activity_detalles_fldetalles,new fragment_today()).commit();
                         return true;
                     case R.id.mars_rover_item:
-                        Snackbar.make(findViewById(android.R.id.content), "Mars Rover", Snackbar.LENGTH_SHORT).show();
+                        Snackbar.make(findViewById(android.R.id.content), "Imagenes vehiculo Roverts.", Snackbar.LENGTH_SHORT).show();
                         getFragmentManager().beginTransaction().replace(R.id.activity_detalles_fldetalles,new fragment_listing()).commit();
                         return true;
+
                     case R.id.favorite_item:
-                        Snackbar.make(findViewById(android.R.id.content), "Favorite", Snackbar.LENGTH_SHORT).show();
+                        Snackbar.make(findViewById(android.R.id.content), "Favoritos.", Snackbar.LENGTH_SHORT).show();
                         getFragmentManager().beginTransaction().replace(R.id.activity_detalles_fldetalles,new fragmentRFavorites()).commit();
+                        return true;
+                    case R.id.acercade_hoy:
+                        Snackbar.make(findViewById(android.R.id.content), "Acerca de.", Snackbar.LENGTH_SHORT).show();
+                        getFragmentManager().beginTransaction().replace(R.id.activity_detalles_fldetalles,new fragment_acecade()).commit();
                         return true;
                     default:
                         return false;
@@ -107,7 +113,7 @@ public class Mars_list extends AppCompatActivity  {
                 {
                     SimpleDraweeView userImage = (SimpleDraweeView) findViewById(R.id.item_imagephoto);
                     userImage.setImageURI("http://graph.facebook.com/"+ object.getString("id") +"/picture?type=large");
-                    Log.d("facebook id : ", object.getString("id"));
+                    //Log.d("facebook id : ",  object.getString("id"));
                     TextView userName= (TextView) findViewById(R.id.item_cameranamefull);
                     userName.setText(object.getString("name"));
                 }

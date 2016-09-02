@@ -5,19 +5,25 @@
         android:id="@+id/mars_rover_item"
         android:checkable="false"
         android:icon="@drawable/ic_image_wb_sunny"
-        android:title="Mars Rovers Images">
+        android:title="Imagenes vehiculo Roverts">
     </item>
     <item
         android:id="@+id/mars_apod_item"
         android:checkable="false"
         android:icon="@drawable/ic_image_wb_sunny"
-        android:title="Today APOD">
+        android:title="Imagen APOD de hoy">
     </item>
     <item
         android:id="@+id/favorite_item"
         android:checkable="false"
         android:icon="@drawable/ic_image_wb_sunny"
-        android:title="Favorites">
+        android:title="Favoritos">
+    </item>
+    <item
+        android:id="@+id/acercade_hoy"
+        android:checkable="false"
+        android:icon="@drawable/ic_image_wb_sunny"
+        android:title="Acerca de">
     </item>
 </group>
 </menu>

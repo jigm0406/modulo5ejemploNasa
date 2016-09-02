@@ -74,7 +74,7 @@ public class fragment_listing extends Fragment {
         ApodService apodService = Data.getRetrofitInstance().create(ApodService.class);
         //**agregar
         int isol = (int)(Math.random()*1000);
-        int ipage = 1;//(int)(Math.random()*2);
+        int ipage = 0;//(int)(Math.random()*2);
         apodService.getMarRover(isol, BuildConfig.API_KEY).enqueue(new Callback<ModelMarRoverPhotos>() {
             @Override
             public void onResponse(Call<ModelMarRoverPhotos> call, Response<ModelMarRoverPhotos> response) {

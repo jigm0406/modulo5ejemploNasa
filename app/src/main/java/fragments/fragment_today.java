@@ -2,6 +2,7 @@ package fragments;
 
 import android.app.Fragment;
 import android.content.Intent;
+import android.graphics.Matrix;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
@@ -9,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.ScaleGestureDetector;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -38,6 +40,10 @@ public class fragment_today  extends Fragment {
     @BindView(R.id.txt_date) TextView Date;
     @BindView(R.id.txt_explanation) TextView explanation;
     String imageURL;
+    //para lo de la escala
+    Matrix matrix = new Matrix();
+    Float scale = 1f;
+    ScaleGestureDetector sgd;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,6 +75,7 @@ public class fragment_today  extends Fragment {
                 Picasso.with(getActivity()).load(response.body().getHdurl()).into(image);
                 //para enviar lo que se va a compartir
                 imageURL=response.body().getHdurl().toString();
+
             }
             @Override
             public void onFailure(Call<APOD> call, Throwable t) {
